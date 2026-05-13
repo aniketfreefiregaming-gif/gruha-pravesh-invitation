@@ -16,7 +16,7 @@
             padding: 0;
             background-color: var(--dark-bg);
             font-family: 'Georgia', serif;
-            height: 100%;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -32,44 +32,43 @@
             align-items: center;
             background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('welcome.jpg') center/cover;
             position: fixed;
-            z-index: 100;
-            top: 0; left: 0;
+            top: 0;
+            left: 0;
+            z-index: 999; /* Higher z-index to stay on top */
         }
 
         .lang-btn {
             padding: 15px 40px;
             margin: 10px;
             border: 2px solid var(--gold);
-            background: transparent;
+            background: rgba(0,0,0,0.5);
             color: var(--gold);
             font-size: 1.2rem;
             cursor: pointer;
             font-weight: bold;
             transition: 0.3s;
+            z-index: 1000;
         }
 
         .lang-btn:hover { background: var(--gold); color: white; }
 
         /* Main Site Horizontal Container */
         #main-site {
-            display: none;
+            display: none; /* Initially Hidden */
             width: 95%;
             max-width: 1200px;
-            height: auto;
             background-color: var(--cream);
             box-shadow: 0 0 50px rgba(0,0,0,0.8);
-            border: 8px solid var(--gold);
+            border: 4px solid var(--gold);
             overflow: hidden;
+            margin: 20px auto;
         }
 
-        /* The Grid: Left side for details, Right side for Journey */
         .layout-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Two perfect halves */
-            min-height: 600px;
+            grid-template-columns: 1fr 1fr;
         }
 
-        /* Left Column */
         .left-side {
             display: flex;
             flex-direction: column;
@@ -78,81 +77,85 @@
 
         .left-side img {
             width: 100%;
-            height: 50%; /* Half for welcome, half for ceremony */
-            object-fit: cover;
+            display: block;
         }
 
-        /* Right Column */
         .right-side {
             position: relative;
-            background-color: #d4d8c5; /* Matches the green tint in 1000389968.jpg */
+            background-color: #d4d8c5;
             display: flex;
             flex-direction: column;
         }
 
         .journey-img {
             width: 100%;
-            height: 100%;
-            object-fit: contain;
+            height: auto;
+            display: block;
         }
 
-        /* Map Button Positioning */
         .location-overlay {
             position: absolute;
-            top: 40px;
-            right: 40px;
+            top: 20px;
+            right: 20px;
             z-index: 10;
         }
 
         .loc-btn {
             background-color: #800000;
             color: white;
-            padding: 12px 20px;
+            padding: 10px 18px;
             text-decoration: none;
             border-radius: 25px;
             font-weight: bold;
-            font-size: 0.9rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            font-size: 0.8rem;
             border: 1px solid white;
         }
 
-        /* Responsive: Stacks on small phones */
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background: #000;
+            color: var(--gold);
+            width: 100%;
+        }
+
         @media (max-width: 850px) {
             .layout-grid { grid-template-columns: 1fr; }
-            #main-site { margin: 20px 0; height: auto; }
-            .left-side { border-right: none; border-bottom: 2px solid var(--gold); }
+            #main-site { width: 100%; margin: 0; border: none; }
+            .left-side { border-right: none; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Select Language Screen -->
     <div id="selection-screen">
-        <h2 style="color: var(--gold); margin-bottom: 20px;">Welcome to Our New Home</h2>
-        <button class="lang-btn" onclick="showSite()">ENGLISH</button>
-        <button class="lang-btn" onclick="showSite()">MARATHI</button>
+        <h2 style="color: var(--gold); margin-bottom: 20px; text-shadow: 2px 2px 4px #000;">Select Language</h2>
+        <button type="button" class="lang-btn" onclick="showSite('en')">ENGLISH</button>
+        <button type="button" class="lang-btn" onclick="showSite('mr')">MARATHI</button>
     </div>
 
+    <!-- The Invitation Content -->
     <div id="main-site">
         <div class="layout-grid">
             
-            <!-- Left Side: Photos 1 and 2 -->
             <div class="left-side">
                 <img src="welcome.jpg" alt="Welcome">
                 <img src="ceremony.jpg" alt="Ceremony">
             </div>
 
-            <!-- Right Side: Journey and Map (Reference: 1000389968.jpg) -->
             <div class="right-side">
                 <div class="location-overlay">
                     <a href="https://maps.google.com/?q=Nigdi+Pune" target="_blank" class="loc-btn">
-                        📍 VIEW LOCATION
+                        📍 OPEN MAP
                     </a>
                 </div>
-                <!-- This image contains the 'Our Journey' collage -->
+                <!-- Reference to your journey collage -->
                 <img src="1000389968.jpg" class="journey-img" alt="Our Journey">
                 
-                <div style="padding: 20px; text-align: center; background: #000; color: var(--gold);">
-                    <strong>Contact: +91 90217 61646</strong>
+                <div class="footer">
+                    <strong>Contact: +91 90217 61646</strong><br>
+                    <small>© 2026 | New Home Celebration</small>
                 </div>
             </div>
 
@@ -160,9 +163,19 @@
     </div>
 
     <script>
-        function showSite() {
-            document.getElementById('selection-screen').style.display = 'none';
-            document.getElementById('main-site').style.display = 'block';
+        function showSite(lang) {
+            console.log("Button clicked, showing site for: " + lang);
+            
+            // 1. Hide the selection screen
+            const selection = document.getElementById('selection-screen');
+            selection.style.display = 'none';
+            
+            // 2. Show the main site
+            const main = document.getElementById('main-site');
+            main.style.display = 'block';
+            
+            // 3. Reset scroll to top
+            window.scrollTo(0, 0);
         }
     </script>
 </body>
