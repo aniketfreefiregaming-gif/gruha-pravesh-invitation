@@ -3,194 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aniket's New Home | Invitation</title>
-    <!-- Importing a premium font for that real website look -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Gruha Pravesh Invitation</title>
     <style>
         :root {
-            --gold: #c5a059;
-            --dark: #0f0f0f;
-            --cream: #f4f1ea;
-            --accent: #8b0000;
+            --gold: #b38728;
+            --cream: #fdfaf1;
+            --dark: #1a1a1a;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
+        body, html {
+            margin: 0;
+            padding: 0;
             background-color: var(--dark);
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Georgia', serif;
             color: #333;
-            overflow-x: hidden;
         }
 
-        /* SCREEN 1: THE ENTRY GATEWAY */
-        #gate-screen {
+        /* Selection Screen */
+        #selection-screen {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('welcome.jpg') center/cover;
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('welcome.jpg') center/cover;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            z-index: 9999; transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
-        }
-
-        .welcome-title {
-            font-family: 'Cinzel', serif;
-            color: var(--gold);
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            text-shadow: 0 5px 15px rgba(0,0,0,0.5);
-        }
-
-        .enter-btn {
-            padding: 15px 50px;
-            background: transparent;
-            border: 2px solid var(--gold);
-            color: var(--gold);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .enter-btn:hover {
-            background: var(--gold);
-            color: white;
-            box-shadow: 0 0 25px rgba(197, 160, 89, 0.4);
-        }
-
-        /* SCREEN 2: THE MAIN RECTANGLE */
-        #invitation-container {
-            display: none; /* Hidden until button click */
-            width: 100%; min-height: 100vh;
-            padding: 50px 20px;
-            display: flex; justify-content: center; align-items: center;
-        }
-
-        .main-card {
-            background: var(--cream);
-            width: 100%; max-width: 1100px;
-            display: flex; /* Forces PC Side-by-Side */
-            border: 1px solid var(--gold);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
-            position: relative;
-        }
-
-        /* LEFT SIDE (Vertical stack of 2 photos) */
-        .left-half {
-            flex: 1;
-            display: flex; flex-direction: column;
-            border-right: 2px solid var(--gold);
-        }
-
-        .left-half img {
-            width: 100%; height: 50%; object-fit: cover;
-            display: block;
-        }
-
-        /* RIGHT SIDE (The Journey) */
-        .right-half {
-            flex: 1;
-            position: relative;
-            background: #e5e2d9; /* Matches journey background */
-        }
-
-        .right-half img {
-            width: 100%; height: 100%; object-fit: cover;
-            display: block;
-        }
-
-        /* FLOATING NAVIGATION BUTTONS */
-        .map-overlay {
-            position: absolute;
-            top: 20px; right: 20px;
-            z-index: 10;
-        }
-
-        .map-button {
-            background: var(--accent);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.8rem;
-            display: inline-flex; align-items: center; gap: 8px;
-            border: 2px solid white;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-
-        .contact-bar {
-            position: absolute;
-            bottom: 0; width: 100%;
-            background: rgba(0,0,0,0.8);
-            color: var(--gold);
+            z-index: 1000;
             text-align: center;
-            padding: 15px;
-            font-size: 0.8rem;
-            font-family: 'Cinzel', serif;
         }
 
-        /* MOBILE FIX: When on phone, make it one column */
-        @media (max-width: 850px) {
-            .main-card { flex-direction: column; }
-            .left-half { border-right: none; border-bottom: 2px solid var(--gold); }
-            .left-half img { height: auto; }
-            .right-half { min-height: 400px; }
-            #invitation-container { padding: 0; }
+        .lang-btn {
+            padding: 15px 40px;
+            margin: 10px;
+            border: 2px solid var(--gold);
+            background: transparent;
+            color: var(--gold);
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 220px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* The Main Rectangle Container - FORCED PC VIEW ON MOBILE */
+        #main-site {
+            display: none;
+            width: 1000px; /* Forces wide PC layout even on mobile */
+            margin: 20px auto;
+            background-color: var(--cream);
+            border: 8px solid var(--gold);
+            box-shadow: 0 0 50px rgba(0,0,0,0.8);
+            transform-origin: top left;
+        }
+
+        .layout-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two perfect halves */
+        }
+
+        /* Left side with 2 photos */
+        .left-side {
+            display: flex;
+            flex-direction: column;
+            border-right: 4px solid var(--gold);
+        }
+
+        .left-side img {
+            width: 100%;
+            display: block;
+        }
+
+        /* Right side with Journey.jpg */
+        .right-side {
+            position: relative;
+            background-color: #d4d8c5;
+        }
+
+        .journey-img {
+            width: 100%;
+            display: block;
+        }
+
+        /* Locate Button & Contact Icon */
+        .overlay-controls {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 15px;
+        }
+
+        .loc-btn {
+            background-color: #800000;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            border: 2px solid white;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-icon {
+            background-color: #25D366; /* WhatsApp Green */
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            border: 2px solid white;
+        }
+
+        .footer {
+            background: #000;
+            color: var(--gold);
+            padding: 20px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        /* Scaling for Mobile Screens so the big rectangle fits */
+        @media (max-width: 1000px) {
+            body {
+                overflow-x: auto;
+            }
+            #main-site {
+                transform: scale(0.38); /* Shrinks the 1000px box to fit phone width */
+                transform-origin: top center;
+                margin-top: 10px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- GATEWAY SECTION -->
-    <div id="gate-screen">
-        <h1 class="welcome-title">Invitation</h1>
-        <button class="enter-btn" onclick="openInvitation()">View Details</button>
+    <!-- Language Selection -->
+    <div id="selection-screen">
+        <h2 id="select-title" style="color: var(--gold); margin-bottom: 20px;">Select Language / भाषा निवडा</h2>
+        <button class="lang-btn" onclick="showSite('en')">ENGLISH</button>
+        <button class="lang-btn" onclick="showSite('mr')">मराठी</button>
     </div>
 
-    <!-- MAIN RECTANGLE SECTION -->
-    <div id="invitation-container" style="display:none;">
-        <div class="main-card">
+    <!-- Main Content -->
+    <div id="main-site">
+        <div class="layout-grid">
             
-            <!-- LEFT PANEL: Photos 1 and 2 -->
-            <div class="left-half">
-                <img src="welcome.jpg" alt="Welcome to Our Home">
-                <img src="ceremony.jpg" alt="House Warming Ceremony">
+            <div class="left-side">
+                <img src="welcome.jpg" alt="Welcome">
+                <img src="ceremony.jpg" alt="Ceremony">
             </div>
 
-            <!-- RIGHT PANEL: Your Journey -->
-            <div class="right-half">
-                <div class="map-overlay">
-                    <a href="https://maps.google.com/?q=Nigdi+Pune" target="_blank" class="map-button">
-                        📍 NAVIGATE TO HOME
+            <div class="right-side">
+                <div class="overlay-controls">
+                    <a href="https://maps.google.com/?q=Nigdi+Pune" target="_blank" class="loc-btn">
+                        📍 <span id="map-text">OPEN MAP</span>
+                    </a>
+                    <!-- WhatsApp Contact Icon -->
+                    <a href="https://wa.me/919021761646" class="contact-icon">
+                        📞
                     </a>
                 </div>
-
-                <!-- This is your journey.jpg which holds the "Our Journey" design -->
-                <img src="journey.jpg" alt="Our Journey Timeline">
-
-                <div class="contact-bar">
-                    MAY 24, 2026 | +91 90217 61646
-                </div>
+                
+                <img src="journey.jpg" class="journey-img" alt="Journey">
             </div>
 
+        </div>
+
+        <div class="footer">
+            <span id="footer-text">Contact: +91 90217 61646 | Invitation for New Home</span>
         </div>
     </div>
 
     <script>
-        function openInvitation() {
-            const gate = document.getElementById('gate-screen');
-            const main = document.getElementById('invitation-container');
+        function showSite(lang) {
+            document.getElementById('selection-screen').style.display = 'none';
+            document.getElementById('main-site').style.display = 'block';
 
-            // Slide the gate up
-            gate.style.transform = 'translateY(-100%)';
-            
-            // Show the invitation
-            setTimeout(() => {
-                gate.style.display = 'none';
-                main.style.display = 'flex';
-                window.scrollTo(0, 0);
-            }, 800);
+            // Change text based on language
+            if (lang === 'mr') {
+                document.getElementById('map-text').innerText = "नकाशा उघडा";
+                document.getElementById('footer-text').innerText = "संपर्क: +९१ ९०२१७ ६१६४६ | गृहप्रवेश आमंत्रण";
+            } else {
+                document.getElementById('map-text').innerText = "OPEN MAP";
+                document.getElementById('footer-text').innerText = "Contact: +91 90217 61646 | Invitation for New Home";
+            }
+            window.scrollTo(0, 0);
         }
     </script>
 </body>
