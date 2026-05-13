@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gruha Pravesh Invitation</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Selection Screen */
+        #selection-screen {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('welcome.jpg') center/cover;
+            position: fixed;
+            z-index: 100;
+        }
+
+        .lang-btn {
+            padding: 15px 40px;
+            margin: 10px;
+            border: 2px solid #b38728;
+            background: transparent;
+            color: #b38728;
+            font-size: 1.2rem;
+            cursor: pointer;
+            font-weight: bold;
+            width: 220px;
+            text-transform: uppercase;
+        }
+
+        /* The Main Rectangle Template */
+        #main-site {
+            display: none;
+            width: 100%;
+            max-width: 450px; /* Forces the clean rectangle shape */
+            background-color: #fdfaf1;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        .image-container {
+            width: 100%;
+            position: relative;
+            line-height: 0; /* Removes gaps between photos */
+        }
+
+        .invitation-image {
+            width: 100%;
+            display: block;
+        }
+
+        /* Precision Location Button for the Empty Box */
+        .location-box {
+            position: absolute;
+            top: 10%; /* Adjusts to sit in the empty space of journey.jpg */
+            right: 10%;
+            z-index: 20;
+        }
+
+        .loc-btn {
+            background-color: #b38728;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .footer {
+            background: #000;
+            color: #b38728;
+            padding: 30px 10px;
+            text-align: center;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="selection-screen">
+        <h2 style="color: #b38728; margin-bottom: 20px;">Select Language</h2>
+        <button class="lang-btn" onclick="showSite()">English</button>
+        <button class="lang-btn" onclick="showSite()">Marathi</button>
+    </div>
+
+    <div id="main-site">
+        <!-- Section 1 -->
+        <div class="image-container">
+            <img src="welcome.jpg" class="invitation-image">
+        </div>
+
+        <!-- Section 2 -->
+        <div class="image-container">
+            <img src="ceremony.jpg" class="invitation-image">
+        </div>
+
+        <!-- Section 3: Journey with Location Button in the empty spot -->
+        <div class="image-container">
+            <div class="location-box">
+                <a href="https://maps.google.com/?q=Nigdi+Pune" target="_blank" class="loc-btn">
+                    📍 OPEN MAP
+                </a>
+            </div>
+            <img src="journey.jpg" class="invitation-image">
+        </div>
+
+        <div class="footer">
+            <strong>Contact: +91 90217 61646</strong><br>
+            © 2026 | New Home Celebration
+        </div>
+    </div>
+
+    <script>
+        function showSite() {
+            document.getElementById('selection-screen').style.display = 'none';
+            document.getElementById('main-site').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
