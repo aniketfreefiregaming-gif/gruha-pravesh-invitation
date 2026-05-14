@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
@@ -24,7 +25,7 @@
 
     body{
       font-family:'Poppins',sans-serif;
-      background:#fdf8f1;
+      background:#f8f3ec;
       color:#3f352c;
       overflow-x:hidden;
     }
@@ -42,9 +43,9 @@
     /* LEFT SIDE */
 
     .left{
-      width:55%;
-      position:relative;
+      width:42%;
       overflow:hidden;
+      background:#eee;
     }
 
     .left img{
@@ -56,138 +57,206 @@
     /* RIGHT SIDE */
 
     .right{
-      width:45%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:60px 50px;
-      background:#fffdf9;
+      width:58%;
+      padding:40px;
+      background:#fdfaf5;
     }
 
     .content{
-      max-width:520px;
       width:100%;
+    }
+
+    /* TOP SECTION */
+
+    .top-section{
+      display:flex;
+      gap:20px;
+      align-items:stretch;
+      margin-bottom:40px;
+    }
+
+    .welcome-box{
+      flex:1;
+      background:#fdfaf5;
+      border:1px solid #eadcc8;
+      border-radius:20px;
+      padding:32px;
     }
 
     h1{
       font-family:'Cormorant Garamond',serif;
       font-size:4rem;
-      line-height:1.05;
-      color:#4b392b;
-      margin-bottom:24px;
+      line-height:1;
+      color:#3f1f0e;
+      margin-bottom:22px;
     }
 
     .subtitle{
-      font-size:1.08rem;
+      font-size:1.05rem;
       line-height:1.9;
-      color:#5c5146;
-      margin-bottom:35px;
+      color:#4f453d;
     }
 
     /* CEREMONY BOX */
 
     .ceremony-box{
-      background:#fff5e8;
-      border:1px solid #f0dfc6;
-      border-radius:24px;
-      padding:30px;
-      margin-bottom:28px;
+      width:42%;
+      background:#fff9f1;
+      border:1px solid #e7d3b7;
+      border-radius:20px;
+      padding:28px;
     }
 
     .ceremony-box h2{
       font-family:'Cormorant Garamond',serif;
       font-size:2rem;
-      color:#9a6a30;
+      line-height:1.2;
+      color:#4a2412;
       margin-bottom:18px;
     }
 
+    .puja-icon{
+      width:90px;
+      margin-bottom:15px;
+    }
+
     .details{
-      line-height:2;
-      color:#5e5144;
-      font-size:1.02rem;
+      line-height:2.2;
+      font-size:1rem;
+      color:#473c35;
+    }
+
+    /* DIVIDER */
+
+    .divider{
+      margin:10px 0 34px;
+      text-align:center;
+      color:#c8a879;
+      font-size:28px;
     }
 
     /* JOURNEY SECTION */
 
     .journey-box{
-      margin-bottom:30px;
+      text-align:center;
+      margin-bottom:40px;
     }
 
     .journey-title{
       font-family:'Cormorant Garamond',serif;
-      font-size:2.2rem;
-      color:#4b392b;
-      margin-bottom:8px;
-      text-align:center;
+      font-size:3rem;
+      color:#4a2412;
+      margin-bottom:6px;
     }
 
     .journey-subtitle{
-      text-align:center;
-      color:#6a5d50;
-      margin-bottom:22px;
-      font-size:0.98rem;
+      color:#5c5146;
+      margin-bottom:28px;
     }
 
     .journey-gallery{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:14px;
+      grid-template-columns:repeat(6,1fr);
+      gap:16px;
     }
 
     .journey-gallery img{
       width:100%;
       aspect-ratio:1/1;
       object-fit:cover;
-      border-radius:20px;
-      border:2px solid #ead9bf;
+      border-radius:50%;
+      border:2px solid #d9b98c;
     }
 
     /* VENUE */
 
     .venue{
       background:white;
-      border:1px solid #eee0cb;
+      border:1px solid #e9d8bf;
       border-radius:24px;
-      padding:28px;
-      margin-top:20px;
+      padding:30px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:30px;
+      margin-bottom:30px;
     }
 
-    .venue h3{
-      color:#9a6a30;
+    .venue-left{
+      flex:1;
+    }
+
+    .venue-left h3{
+      font-family:'Cormorant Garamond',serif;
+      font-size:2.2rem;
+      color:#4a2412;
       margin-bottom:12px;
-      font-size:1.3rem;
     }
 
-    .venue p{
+    .venue-left p{
       line-height:1.8;
+      font-size:1.05rem;
     }
 
-    .map-btn{
-      display:inline-block;
-      margin-top:24px;
-      background:#bc843d;
-      color:white;
-      text-decoration:none;
-      padding:14px 28px;
-      border-radius:40px;
-      transition:0.3s;
-      font-weight:500;
-    }
-
-    .map-btn:hover{
-      background:#996524;
-    }
-
-    footer{
-      margin-top:28px;
-      color:#857564;
-      font-size:0.95rem;
+    .venue-right{
+      width:320px;
       text-align:center;
     }
 
-    /* TABLETS */
+    .map-btn{
+      display:block;
+      width:100%;
+      background:#a96a22;
+      color:white;
+      text-decoration:none;
+      padding:16px 20px;
+      border-radius:12px;
+      font-size:1rem;
+      font-weight:500;
+      margin-bottom:16px;
+      transition:0.3s;
+    }
 
-    @media(max-width:1024px){
+    .map-btn:hover{
+      background:#8d5518;
+    }
+
+    .or-text{
+      margin-bottom:16px;
+      color:#5f554c;
+    }
+
+    .secondary-map-btn{
+      display:block;
+      width:100%;
+      background:white;
+      color:#7c4d17;
+      text-decoration:none;
+      padding:16px 20px;
+      border-radius:12px;
+      border:1px solid #d7b68f;
+      font-size:1rem;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    .secondary-map-btn:hover{
+      background:#faf2e8;
+    }
+
+    /* FOOTER */
+
+    footer{
+      text-align:center;
+      font-family:'Cormorant Garamond',serif;
+      font-size:2rem;
+      color:#4a2412;
+      padding-bottom:20px;
+    }
+
+    /* TABLET */
+
+    @media(max-width:1200px){
 
       .container{
         flex-direction:column;
@@ -199,19 +268,31 @@
       }
 
       .left{
-        height:50vh;
+        height:70vh;
       }
 
       .left img{
         height:100%;
       }
 
-      .right{
-        padding:40px 28px;
+      .top-section{
+        flex-direction:column;
       }
 
-      h1{
-        font-size:3rem;
+      .ceremony-box{
+        width:100%;
+      }
+
+      .journey-gallery{
+        grid-template-columns:repeat(3,1fr);
+      }
+
+      .venue{
+        flex-direction:column;
+      }
+
+      .venue-right{
+        width:100%;
       }
 
     }
@@ -220,44 +301,29 @@
 
     @media(max-width:768px){
 
-      .left{
-        height:42vh;
-      }
-
       .right{
-        padding:32px 18px;
+        padding:24px 18px;
       }
 
       h1{
-        font-size:2.4rem;
-      }
-
-      .subtitle{
-        font-size:0.98rem;
-        line-height:1.7;
-      }
-
-      .ceremony-box,
-      .venue{
-        padding:22px;
-      }
-
-      .ceremony-box h2{
-        font-size:1.7rem;
+        font-size:2.6rem;
       }
 
       .journey-title{
-        font-size:1.9rem;
+        font-size:2.2rem;
       }
 
       .journey-gallery{
         grid-template-columns:repeat(2,1fr);
-        gap:12px;
+        gap:14px;
       }
 
-      .map-btn{
-        width:100%;
-        text-align:center;
+      .venue-left h3{
+        font-size:1.8rem;
+      }
+
+      footer{
+        font-size:1.5rem;
       }
 
     }
@@ -267,15 +333,17 @@
     @media(max-width:480px){
 
       h1{
-        font-size:2rem;
+        font-size:2.1rem;
       }
 
       .journey-gallery{
-        grid-template-columns:1fr;
+        grid-template-columns:1fr 1fr;
       }
 
-      .details{
-        font-size:0.96rem;
+      .welcome-box,
+      .ceremony-box,
+      .venue{
+        padding:22px;
       }
 
     }
@@ -291,51 +359,78 @@
 
     <section class="left">
 
-      <!-- YOUR NEW HIGH-RES IMAGE -->
+      <!-- CHANGE THIS PATH -->
       <img
-        src="YOUR_IMAGE_HERE.png"
-        alt="Grah Pravesh Invitation"
+        src="./images/banner.png"
+        alt="Welcome Home"
       />
 
     </section>
 
-    <!-- RIGHT CONTENT -->
+    <!-- RIGHT SIDE -->
 
     <section class="right">
 
       <div class="content">
 
-        <h1>
-          Welcome to <br />
-          Our New Home!
-        </h1>
+        <!-- TOP SECTION -->
 
-        <p class="subtitle">
-          With immense joy and divine blessings,
-          we warmly invite you and your family
-          to celebrate our Grah Pravesh and
-          Satya Narayan Puja ceremony.
-        </p>
+        <div class="top-section">
 
-        <!-- CEREMONY DETAILS -->
+          <!-- WELCOME -->
 
-        <div class="ceremony-box">
+          <div class="welcome-box">
 
-          <h2>
-            Grah Pravesh &
-            Satya Narayan Puja
-          </h2>
+            <h1>
+              Welcome to <br>
+              Our New Home!
+            </h1>
 
-          <div class="details">
-
-            📅 Date : Saturday, 23 May 2026 <br />
-
-            ⏰ Time : 10:00 AM to 12:00 PM <br />
-
-            🍛 Lunch will be served at 12 PM
+            <p class="subtitle">
+              With immense joy and divine blessings,
+              we warmly invite you and your family
+              to celebrate our Grah Pravesh and
+              Satya Narayan Puja ceremony.
+            </p>
 
           </div>
 
+          <!-- CEREMONY BOX -->
+
+          <div class="ceremony-box">
+
+            <!-- OPTIONAL ICON -->
+            <!-- Upload icon as puja-icon.png -->
+
+            <img
+              src="./images/puja-icon.png"
+              alt="Puja Icon"
+              class="puja-icon"
+            >
+
+            <h2>
+              Grah Pravesh &
+              Satya Narayan Puja
+            </h2>
+
+            <div class="details">
+
+              📅 Date : Saturday, 23 May 2026 <br>
+
+              ⏰ Time : 10:00 AM to 12:00 PM <br>
+
+              🍛 Lunch will be served at 12 PM
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- DIVIDER -->
+
+        <div class="divider">
+          ✦ ✦ ✦
         </div>
 
         <!-- OUR JOURNEY -->
@@ -352,63 +447,62 @@
 
           <div class="journey-gallery">
 
-            <img
-              src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800&auto=format&fit=crop"
-              alt="Journey 1"
-            />
-
-            <img
-              src="https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=800&auto=format&fit=crop"
-              alt="Journey 2"
-            />
-
-            <img
-              src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=800&auto=format&fit=crop"
-              alt="Journey 3"
-            />
-
-            <img
-              src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=800&auto=format&fit=crop"
-              alt="Journey 4"
-            />
-
-            <img
-              src="https://images.unsplash.com/photo-1448630360428-65456885c650?q=80&w=800&auto=format&fit=crop"
-              alt="Journey 5"
-            />
-
-            <img
-              src="https://images.unsplash.com/photo-1460317442991-0ec209397118?q=80&w=800&auto=format&fit=crop"
-              alt="Journey 6"
-            />
+            <img src="./images/journey1.jpg" alt="">
+            <img src="./images/journey2.jpg" alt="">
+            <img src="./images/journey3.jpg" alt="">
+            <img src="./images/journey4.jpg" alt="">
+            <img src="./images/journey5.jpg" alt="">
+            <img src="./images/journey6.jpg" alt="">
 
           </div>
 
         </div>
 
-        <!-- ADDRESS -->
+        <!-- VENUE -->
 
         <div class="venue">
 
-          <h3>
-            📍 Venue
-          </h3>
+          <div class="venue-left">
 
-          <p>
-            Sector no 24 Flat No. 601, <br />
-            Near Sant Kabir Garden Nigdi Pradhikaran,<br />
-            Nigdi, Pune - 411044
-          </p>
+            <h3>
+              📍 Venue
+            </h3>
 
-          <a
-            class="map-btn"
-            href="https://maps.app.goo.gl/Y8WWpbh25voUi21c9"
-            target="_blank"
-          >
-            View Google Map
-          </a>
+            <p>
+              Sector no 24 Flat No. 601, <br>
+              Near Sant Kabir Garden Nigdi Pradhikaran,<br>
+              Nigdi, Pune - 411044
+            </p>
+
+          </div>
+
+          <div class="venue-right">
+
+            <a
+              class="map-btn"
+              href="https://maps.app.goo.gl/Y8WWpbh25voUi21c9"
+              target="_blank"
+            >
+              📍 View Google Map
+            </a>
+
+            <div class="or-text">
+              or
+            </div>
+
+            <a
+              class="secondary-map-btn"
+              href="https://maps.app.goo.gl/Y8WWpbh25voUi21c9"
+              target="_blank"
+            >
+              ↗ Open in Google Maps
+            </a>
+
+          </div>
 
         </div>
+
+        <!-- FOOTER -->
 
         <footer>
           🌸 No gifts, only blessings 🌸
