@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
 
   <title>Grah Pravesh Invitation</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
 
@@ -21,6 +27,11 @@
       background:#fdf8f1;
       color:#3f352c;
       overflow-x:hidden;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
     }
 
     .container{
@@ -42,21 +53,6 @@
       object-fit:cover;
     }
 
-    /* Decorative Garland */
-
-    .garland{
-      position:absolute;
-      top:0;
-      left:50%;
-      transform:translateX(-50%);
-      width:90%;
-      text-align:center;
-      font-size:38px;
-      letter-spacing:8px;
-      padding-top:12px;
-      z-index:2;
-    }
-
     /* RIGHT SIDE */
 
     .right{
@@ -64,66 +60,111 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:60px;
+      padding:60px 50px;
       background:#fffdf9;
     }
 
     .content{
-      max-width:500px;
+      max-width:520px;
+      width:100%;
     }
 
     h1{
       font-family:'Cormorant Garamond',serif;
-      font-size:4.2rem;
+      font-size:4rem;
       line-height:1.05;
       color:#4b392b;
-      margin-bottom:25px;
+      margin-bottom:24px;
     }
 
     .subtitle{
-      font-size:1.1rem;
+      font-size:1.08rem;
       line-height:1.9;
       color:#5c5146;
       margin-bottom:35px;
     }
 
+    /* CEREMONY BOX */
+
     .ceremony-box{
       background:#fff5e8;
       border:1px solid #f0dfc6;
-      border-radius:20px;
-      padding:28px;
-      margin-bottom:25px;
+      border-radius:24px;
+      padding:30px;
+      margin-bottom:28px;
     }
 
     .ceremony-box h2{
       font-family:'Cormorant Garamond',serif;
       font-size:2rem;
       color:#9a6a30;
-      margin-bottom:15px;
+      margin-bottom:18px;
     }
 
     .details{
       line-height:2;
       color:#5e5144;
+      font-size:1.02rem;
     }
+
+    /* JOURNEY SECTION */
+
+    .journey-box{
+      margin-bottom:30px;
+    }
+
+    .journey-title{
+      font-family:'Cormorant Garamond',serif;
+      font-size:2.2rem;
+      color:#4b392b;
+      margin-bottom:8px;
+      text-align:center;
+    }
+
+    .journey-subtitle{
+      text-align:center;
+      color:#6a5d50;
+      margin-bottom:22px;
+      font-size:0.98rem;
+    }
+
+    .journey-gallery{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+
+    .journey-gallery img{
+      width:100%;
+      aspect-ratio:1/1;
+      object-fit:cover;
+      border-radius:20px;
+      border:2px solid #ead9bf;
+    }
+
+    /* VENUE */
 
     .venue{
       background:white;
       border:1px solid #eee0cb;
-      border-radius:20px;
-      padding:25px;
+      border-radius:24px;
+      padding:28px;
       margin-top:20px;
     }
 
     .venue h3{
       color:#9a6a30;
-      margin-bottom:10px;
+      margin-bottom:12px;
       font-size:1.3rem;
+    }
+
+    .venue p{
+      line-height:1.8;
     }
 
     .map-btn{
       display:inline-block;
-      margin-top:22px;
+      margin-top:24px;
       background:#bc843d;
       color:white;
       text-decoration:none;
@@ -141,19 +182,24 @@
       margin-top:28px;
       color:#857564;
       font-size:0.95rem;
+      text-align:center;
     }
 
-    /* MOBILE */
+    /* TABLETS */
 
-    @media(max-width:900px){
+    @media(max-width:1024px){
 
       .container{
         flex-direction:column;
       }
 
-      .left{
+      .left,
+      .right{
         width:100%;
-        height:45vh;
+      }
+
+      .left{
+        height:50vh;
       }
 
       .left img{
@@ -161,21 +207,75 @@
       }
 
       .right{
-        width:100%;
-        padding:35px 22px;
+        padding:40px 28px;
       }
 
       h1{
-        font-size:2.8rem;
+        font-size:3rem;
+      }
+
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px){
+
+      .left{
+        height:42vh;
+      }
+
+      .right{
+        padding:32px 18px;
+      }
+
+      h1{
+        font-size:2.4rem;
       }
 
       .subtitle{
-        font-size:1rem;
+        font-size:0.98rem;
+        line-height:1.7;
+      }
+
+      .ceremony-box,
+      .venue{
+        padding:22px;
+      }
+
+      .ceremony-box h2{
+        font-size:1.7rem;
+      }
+
+      .journey-title{
+        font-size:1.9rem;
+      }
+
+      .journey-gallery{
+        grid-template-columns:repeat(2,1fr);
+        gap:12px;
       }
 
       .map-btn{
         width:100%;
         text-align:center;
+      }
+
+    }
+
+    /* SMALL MOBILE */
+
+    @media(max-width:480px){
+
+      h1{
+        font-size:2rem;
+      }
+
+      .journey-gallery{
+        grid-template-columns:1fr;
+      }
+
+      .details{
+        font-size:0.96rem;
       }
 
     }
@@ -191,11 +291,11 @@
 
     <section class="left">
 
-      <!-- FULL HOUSE IMAGE -->
+      <!-- YOUR NEW HIGH-RES IMAGE -->
       <img
-        src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1600&auto=format&fit=crop"
-        alt="Beautiful House"
-      >
+        src="YOUR_IMAGE_HERE.png"
+        alt="Grah Pravesh Invitation"
+      />
 
     </section>
 
@@ -206,7 +306,7 @@
       <div class="content">
 
         <h1>
-          Welcome to <br>
+          Welcome to <br />
           Our New Home!
         </h1>
 
@@ -228,11 +328,59 @@
 
           <div class="details">
 
-            📅 Date : 23 May 2026 <br>
+            📅 Date : Saturday, 23 May 2026 <br />
 
-            ⏰ Time : 12 PM to 3 PM <br>
+            ⏰ Time : 10:00 AM to 12:00 PM <br />
 
-            🍛 Lunch will be served after Puja
+            🍛 Lunch will be served at 12 PM
+
+          </div>
+
+        </div>
+
+        <!-- OUR JOURNEY -->
+
+        <div class="journey-box">
+
+          <h2 class="journey-title">
+            Our Journey
+          </h2>
+
+          <p class="journey-subtitle">
+            House hunting and renovation memories
+          </p>
+
+          <div class="journey-gallery">
+
+            <img
+              src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800&auto=format&fit=crop"
+              alt="Journey 1"
+            />
+
+            <img
+              src="https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=800&auto=format&fit=crop"
+              alt="Journey 2"
+            />
+
+            <img
+              src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=800&auto=format&fit=crop"
+              alt="Journey 3"
+            />
+
+            <img
+              src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=800&auto=format&fit=crop"
+              alt="Journey 4"
+            />
+
+            <img
+              src="https://images.unsplash.com/photo-1448630360428-65456885c650?q=80&w=800&auto=format&fit=crop"
+              alt="Journey 5"
+            />
+
+            <img
+              src="https://images.unsplash.com/photo-1460317442991-0ec209397118?q=80&w=800&auto=format&fit=crop"
+              alt="Journey 6"
+            />
 
           </div>
 
@@ -247,8 +395,8 @@
           </h3>
 
           <p>
-            Sector no 24 Flat No. 601, <br>
-            Near Sant kabir garden Nigdi Pradhikaran,<br>
+            Sector no 24 Flat No. 601, <br />
+            Near Sant Kabir Garden Nigdi Pradhikaran,<br />
             Nigdi, Pune - 411044
           </p>
 
