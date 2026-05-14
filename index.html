@@ -37,14 +37,15 @@
     .container{
       display:flex;
       min-height:100vh;
+      align-items:stretch;
     }
 
     /* LEFT SIDE */
 
     .left{
-      width:42%;
+      width:40%;
       background:#f8f3ec;
-      padding:20px;
+      padding:18px;
     }
 
     .left-frame{
@@ -59,14 +60,19 @@
 
     .left img{
       width:100%;
-      height:62%;
+      height:58%;
       object-fit:cover;
     }
 
+    /* VENUE */
+
     .venue-left-card{
-      padding:22px;
+      padding:20px;
       background:#fffaf4;
       flex:1;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
     }
 
     .venue-left-card h3{
@@ -79,15 +85,17 @@
     .venue-left-card p{
       line-height:1.7;
       margin-bottom:18px;
-      font-size:0.98rem;
+      font-size:0.96rem;
     }
 
     /* RIGHT SIDE */
 
     .right{
-      width:58%;
-      padding:28px;
+      width:60%;
+      padding:22px 26px;
       background:#fdfaf5;
+      display:flex;
+      align-items:center;
     }
 
     .content{
@@ -100,7 +108,7 @@
       display:flex;
       gap:16px;
       align-items:stretch;
-      margin-bottom:18px;
+      margin-bottom:14px;
     }
 
     .welcome-box{
@@ -108,20 +116,20 @@
       background:#fdfaf5;
       border:1px solid #eadcc8;
       border-radius:20px;
-      padding:24px;
+      padding:22px;
     }
 
     h1{
       font-family:'Cormorant Garamond',serif;
-      font-size:3.2rem;
+      font-size:3rem;
       line-height:1;
       color:#3f1f0e;
-      margin-bottom:16px;
+      margin-bottom:14px;
     }
 
     .subtitle{
-      font-size:1rem;
-      line-height:1.8;
+      font-size:0.96rem;
+      line-height:1.75;
       color:#4f453d;
     }
 
@@ -132,36 +140,36 @@
       background:#fff9f1;
       border:1px solid #e7d3b7;
       border-radius:20px;
-      padding:20px;
+      padding:18px;
     }
 
     .ceremony-box h2{
       font-family:'Cormorant Garamond',serif;
-      font-size:2rem;
+      font-size:1.8rem;
       line-height:1.2;
       color:#4a2412;
-      margin-bottom:18px;
+      margin-bottom:14px;
     }
 
     .details{
-      line-height:1.8;
-      font-size:0.95rem;
+      line-height:1.7;
+      font-size:0.92rem;
       color:#473c35;
     }
 
     /* DIVIDER */
 
     .divider{
-      margin:8px 0 18px;
+      margin:6px 0 14px;
       text-align:center;
       color:#c8a879;
-      font-size:22px;
+      font-size:18px;
     }
 
     /* JOURNEY */
 
     .journey-box{
-      margin-bottom:10px;
+      margin-bottom:8px;
     }
 
     .journey-full-image{
@@ -171,7 +179,7 @@
     .journey-full-image img{
       width:100%;
       display:block;
-      border-radius:0;
+      border-radius:18px;
     }
 
     /* BUTTONS */
@@ -182,11 +190,11 @@
       background:#a96a22;
       color:white;
       text-decoration:none;
-      padding:14px 18px;
+      padding:13px 18px;
       border-radius:12px;
-      font-size:0.95rem;
+      font-size:0.92rem;
       font-weight:500;
-      margin-bottom:12px;
+      margin-bottom:10px;
       transition:0.3s;
       text-align:center;
     }
@@ -201,10 +209,10 @@
       background:white;
       color:#7c4d17;
       text-decoration:none;
-      padding:14px 18px;
+      padding:13px 18px;
       border-radius:12px;
       border:1px solid #d7b68f;
-      font-size:0.95rem;
+      font-size:0.92rem;
       font-weight:500;
       transition:0.3s;
       text-align:center;
@@ -219,10 +227,9 @@
     footer{
       text-align:center;
       font-family:'Cormorant Garamond',serif;
-      font-size:1.6rem;
+      font-size:1.5rem;
       color:#4a2412;
-      padding-top:10px;
-      padding-bottom:10px;
+      padding-top:8px;
     }
 
     /* TABLET */
@@ -276,6 +283,7 @@
     }
 
   </style>
+
 </head>
 
 <body>
