@@ -3,106 +3,151 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gruh Pravesh</title>
+<title>Gruh Pravesh - Welcome</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-    *{margin:0;padding:0;box-sizing:border-box;}
-    body{font-family:'Poppins',sans-serif;background:#f8f3ec;display:flex;justify-content:center;align-items:center;min-height:100vh;padding:20px;overflow:hidden;}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+        font-family: 'Poppins', sans-serif;
+        /* Traditional decorative background */
+        background-color: #fcf8f2;
+        background-image: url("https://www.transparenttextures.com/patterns/cream-pixels.png"); 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+    }
 
-    /* 1. Language Selection (Visible First) */
+    /* Floating Animation for Bappa */
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+    }
+
+    .top-image {
+        width: 160px;
+        height: auto;
+        border-radius: 50%; /* Makes it look like a medallion */
+        border: 3px solid #a96a22;
+        padding: 5px;
+        background: white;
+        margin-bottom: 15px;
+        animation: float 4s ease-in-out infinite;
+        box-shadow: 0 10px 20px rgba(169, 106, 34, 0.2);
+    }
+
+    .ganesh-namah {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.8rem;
+        color: #7c4d17;
+        font-weight: 700;
+        margin-bottom: 25px;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        letter-spacing: 2px;
+    }
+
+    /* Decorated Welcome Box */
     .language-box {
         background: white;
         padding: 50px 40px;
         border-radius: 24px;
-        border: 1px solid #eadcc8;
+        border: 2px solid #d7b68f;
         text-align: center;
         width: 100%;
-        max-width: 500px;
-        z-index: 10;
-        transition: opacity 0.5s ease;
+        max-width: 480px;
+        position: relative;
+        box-shadow: 0 20px 40px rgba(74, 36, 18, 0.1);
+        /* Decorative corner flowers */
+        overflow: hidden;
     }
 
-    h1{font-family:'Cormorant Garamond',serif;font-size:3rem;color:#4a2412;margin-bottom:14px;}
-    p{color:#5c5146;margin-bottom:36px;line-height:1.7;}
-    
-    /* Buttons */
+    /* Adding corner decorations */
+    .language-box::before {
+        content: "❃";
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: #d7b68f;
+        font-size: 1.5rem;
+    }
+    .language-box::after {
+        content: "❃";
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        color: #d7b68f;
+        font-size: 1.5rem;
+    }
+
+    h1 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 3.2rem;
+        color: #4a2412;
+        margin-bottom: 10px;
+    }
+
+    p {
+        color: #5c5146;
+        margin-bottom: 36px;
+        font-style: italic;
+    }
+
+    /* Buttons with Hover Effects */
     .btn {
         display: block;
         width: 100%;
         padding: 18px;
         margin-bottom: 16px;
-        border-radius: 14px;
+        border-radius: 50px; /* Modern rounded buttons */
         text-decoration: none;
         font-size: 1rem;
-        font-weight: 500;
-        text-align: center;
-        cursor: pointer;
-        border: none;
-        transition: 0.3s;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
     }
-    .english-btn { background: #a96a22; color: white; }
-    .marathi-btn { background: white; border: 1px solid #d7b68f; color: #7c4d17; }
 
-    /* 2. Ganpati Photo Overlay (Hidden initially) */
-    #bappa-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: white;
-        display: none; /* Hidden */
-        justify-content: center;
-        align-items: center;
-        z-index: 100;
-        opacity: 0;
-        transition: opacity 1s ease-in-out;
+    .english-btn {
+        background: #a96a22;
+        color: white;
+        box-shadow: 0 4px 15px rgba(169, 106, 34, 0.3);
     }
-    #bappa-overlay img {
-        max-width: 85%;
-        max-height: 75vh;
-        border-radius: 20px;
+
+    .english-btn:hover {
+        background: #8e581c;
+        transform: translateY(-2px);
+    }
+
+    .marathi-btn {
+        background: white;
+        border: 2px solid #d7b68f;
+        color: #7c4d17;
+    }
+
+    .marathi-btn:hover {
+        background: #fdfaf5;
+        border-color: #a96a22;
+        transform: translateY(-2px);
     }
 </style>
 </head>
 <body>
 
-<div class="language-box" id="langBox">
-    <h1>Welcome</h1>
-    <p>Please select your preferred language</p>
-    <button onclick="showBappa('english.html')" class="btn english-btn">English</button>
-    <button onclick="showBappa('marathi.html')" class="btn marathi-btn">मराठी</button>
-</div>
+    <img src="ganpati.jpg" alt="Ganpati Bappa" class="top-image">
 
-<div id="bappa-overlay">
-    <img src="ganpati.jpg" alt="Ganpati Bappa">
-</div>
+    <div class="ganesh-namah">॥ श्री गणेशाय नमः ॥</div>
 
-<script>
-    function showBappa(nextPage) {
-        const langBox = document.getElementById('langBox');
-        const overlay = document.getElementById('bappa-overlay');
-
-        // Hide the buttons
-        langBox.style.opacity = '0';
-
-        setTimeout(() => {
-            langBox.style.display = 'none';
-            
-            // Show the Bappa Image
-            overlay.style.display = 'flex';
-            setTimeout(() => {
-                overlay.style.opacity = '1';
-            }, 50);
-
-            // STEP 3: Wait 3 seconds, then open the website page
-            setTimeout(() => {
-                window.location.href = nextPage;
-            }, 3000); 
-
-        }, 500);
-    }
-</script>
+    <div class="language-box">
+        <h1>Welcome</h1>
+        <p>Choose your preferred language to view the invitation</p>
+        
+        <a href="english.html" class="btn english-btn">English</a>
+        <a href="marathi.html" class="btn marathi-btn">मराठी</a>
+    </div>
 
 </body>
 </html>
