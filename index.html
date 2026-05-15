@@ -7,44 +7,47 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
     *{margin:0;padding:0;box-sizing:border-box;}
-    body{font-family:'Poppins',sans-serif;background:#f8f3ec;display:flex;justify-content:center;align-items:center;min-height:100vh;padding:20px;overflow:hidden;}
+    body{font-family:'Poppins',sans-serif;background:#f8f3ec;display:flex;justify-content:center;align-items:center;min-height:100vh;padding:20px;}
     
-    .language-box{background:white;padding:50px 40px;border-radius:24px;border:1px solid #eadcc8;text-align:center;width:100%;max-width:500px;transition: opacity 0.8s ease;}
+    /* The initial box with buttons */
+    .language-box{background:white;padding:50px 40px;border-radius:24px;border:1px solid #eadcc8;text-align:center;width:100%;max-width:500px;transition: 0.5s;}
+    
     h1{font-family:'Cormorant Garamond',serif;font-size:3rem;color:#4a2412;margin-bottom:14px;}
     p{color:#5c5146;margin-bottom:36px;line-height:1.7;}
-    .btn{display:block;width:100%;padding:18px;margin-bottom:16px;border-radius:14px;text-decoration:none;font-size:1rem;font-weight:500;cursor:pointer;border:none;}
+    
+    .btn{display:block;width:100%;padding:18px;margin-bottom:16px;border-radius:14px;text-decoration:none;font-size:1rem;font-weight:500;cursor:pointer;border:none;transition: 0.3s;}
     .english-btn{background:#a96a22;color:white;}
     .marathi-btn{background:white;border:1px solid #d7b68f;color:#7c4d17;}
 
-    /* Hidden Image Overlay */
+    /* The Bappa Image Overlay (Hidden by default) */
     #bappa-overlay {
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
+        width: 100vw;
+        height: 100vh;
         background: white;
-        display: none; /* Starts hidden */
+        display: none; /* Hidden at start */
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        z-index: 1000;
-        opacity: 0;
-        transition: opacity 1s ease;
+        z-index: 9999;
     }
     #bappa-overlay img {
         max-width: 90%;
         max-height: 80vh;
-        border-radius: 20px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
 </style>
 </head>
 <body>
 
-<div class="language-box" id="langBox">
+<div class="language-box" id="selectionBox">
     <h1>Welcome</h1>
     <p>Please select your preferred language</p>
-    <button onclick="showBappa('english.html')" class="btn english-btn">English</button>
-    <button onclick="showBappa('marathi.html')" class="btn marathi-btn">मराठी</button>
+    <button onclick="proceedToBappa('english.html')" class="btn english-btn">English</button>
+    <button onclick="proceedToBappa('marathi.html')" class="btn marathi-btn">मराठी</button>
 </div>
 
 <div id="bappa-overlay">
@@ -52,28 +55,18 @@
 </div>
 
 <script>
-    function showBappa(nextPage) {
-        const langBox = document.getElementById('langBox');
+    function proceedToBappa(destination) {
+        // Hide the language box
+        document.getElementById('selectionBox').style.display = 'none';
+        
+        // Show the Ganpati Bappa overlay
         const overlay = document.getElementById('bappa-overlay');
+        overlay.style.display = 'flex';
 
-        // 1. Fade out the language selection
-        langBox.style.opacity = '0';
-
-        setTimeout(() => {
-            langBox.style.display = 'none';
-            
-            // 2. Show the Ganpati Photo
-            overlay.style.display = 'flex';
-            setTimeout(() => {
-                overlay.style.opacity = '1';
-            }, 50);
-
-            // 3. Wait 3 seconds, then go to the next page
-            setTimeout(() => {
-                window.location.href = nextPage;
-            }, 3000); 
-
-        }, 800; // Time for buttons to fade out
+        // Wait for 3 seconds so they can see the photo, then redirect
+        setTimeout(function() {
+            window.location.href = destination;
+        }, 3000); 
     }
 </script>
 
